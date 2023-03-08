@@ -1,0 +1,52 @@
+<Exercise 1>
+
+str_n = input('your input: ')
+n = int(str_n)
+for i in range(n):
+    s=''
+    for j in range(i):
+        s=s+' '
+    for k in range(n-i):
+        s=s+'*'
+    print(s)
+    
+<Exercise 2>
+
+sd = int(input('Enter the start day (0~6)>> '))
+ndays = int(input('Enter the number of days (0~6)>> '))
+
+print('Sun Mon Tue Wed Thu Fri Sat')
+for pos in range(sd):
+    print('%3s ' % ' ',end='')
+pos = pos +1
+for i in range(1,ndays+1):
+    if pos == 6:
+        print('%3s '% i)
+        pos = 0
+    else:
+      print('%3s ' % i,end='')
+      pos = pos+1
+      
+<Exercise 3>
+
+fInput = open('input.txt', 'r')
+fOutput = open('output.txt', 'w')
+
+sum = 0
+for line in fInput:
+    numString = line.split(' ')
+    for n in numString:
+        sum += float(n)
+    fOutput.write('%.1f\n' % sum)
+    sum = 0
+
+fInput.close()
+fOutput.close()
+
+fp = open('output.txt', 'r')
+
+for line in fp:
+    print(line)
+
+fp.close()
+
